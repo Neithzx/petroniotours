@@ -1,0 +1,12 @@
+Petronio Tour Website – Project Log (General Overview for Developers)
+File Format: .txt
+Purpose: Provide a high-level summary of daily progress on the Petronio Tour web project. This document is independent of Git and intended for general project tracking and team reference.
+
+
+Project Log – May 30, 2025
+
+The initial version of the website was deployed to GitHub Pages.
+
+Purpose of deployment: enable early-stage discussion and collaborative input on the project concept.
+
+This serves as the foundational step for defining project scope and visual direction.

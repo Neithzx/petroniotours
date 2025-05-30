@@ -1,0 +1,692 @@
+/* Importar fuente Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+:root {
+    --primary-color: #6A0DAD; /* Púrpura oscuro, como de uva */
+    --secondary-color: #8A2BE2; /* Púrpura más claro, Lavanda */
+    --accent-color: #FFD700; /* Dorado para acentos, tipo "oro" */
+    --text-color: #333;
+    --light-bg: #f8f8fa; /* Fondo muy claro */
+    --medium-bg: #e0e0e0; /* Gris intermedio para contrastes */
+    --dark-bg: #2c2c3e; /* Fondo oscuro para secciones invertidas */
+    --card-bg: #ffffff;
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 800; /* Inter Black */
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+p {
+    font-weight: 400; /* Inter Regular */
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+/* Encabezado */
+.header {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: var(--accent-color);
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav li {
+    margin-left: 25px;
+    margin-bottom: 5px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 7px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    display: block; /* Para que el padding funcione en toda el área del link */
+}
+
+.nav a:hover, .nav a.active {
+    background-color: rgba(255,255,255,0.2);
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1596700547055-66774c8a2455?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 150px 20px;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: inset 0 -5px 15px rgba(0,0,0,0.2);
+}
+
+.hero h2 {
+    font-size: 4.5rem;
+    margin-bottom: 25px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: white; /* Titulo blanco sobre fondo oscuro */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255,255,255,0.9);
+}
+
+/* Botones Generales */
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 18px 40px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover {
+    background-color: #e6b800; /* Un poco más oscuro */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.btn-secondary {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Secciones Generales */
+section {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+}
+
+
+/* Paquetes Section */
+.paquetes {
+    background-color: var(--light-bg);
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    text-align: left;
+}
+
+.package-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 8px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.package-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.package-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.package-card h4 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin: 0;
+    font-weight: 700;
+}
+
+.package-duration {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    white-space: nowrap; /* Evita que el texto se rompa */
+}
+
+.package-card p {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Para que todos los párrafos tengan la misma altura */
+}
+
+.package-benefits {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.package-benefits li {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: #444;
+    position: relative;
+    padding-left: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.package-benefits li i {
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    width: 25px; /* Ancho fijo para alinear íconos */
+    text-align: center;
+}
+
+.package-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.package-card .btn-secondary {
+    width: 100%;
+    margin-top: auto; /* Empuja el botón hacia abajo */
+}
+
+/* Itinerario Section */
+.itinerario {
+    background-color: var(--medium-bg);
+    color: var(--text-color);
+}
+
+.itinerary-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna por defecto */
+    gap: 30px;
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.itinerary-item {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.itinerary-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.itinerary-day {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-right: 25px;
+    flex-shrink: 0; /* No permite que el día se encoja */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    color: white;
+}
+
+.itinerary-content h4 {
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.itinerary-content p {
+    font-size: 1.05rem;
+    color: #555;
+}
+
+.itinerary-content p .highlight {
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.itinerary-content i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+/* Qué Incluye Section */
+.incluye {
+    background-color: var(--light-bg);
+}
+
+.includes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.include-item {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.include-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.include-item i {
+    font-size: 3.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.include-item h4 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.include-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+
+/* Mi Cuenta Section */
+.mi-cuenta {
+    background-color: var(--card-bg);
+}
+
+.account-info {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: var(--light-bg);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    padding: 50px;
+    text-align: left; /* Alineado a la izquierda para mejor lectura de detalles */
+}
+
+.account-info p {
+    font-size: 1.15rem;
+    margin-bottom: 15px;
+    color: #555;
+    text-align: center; /* Centrar los mensajes iniciales */
+}
+
+.account-info h4 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.account-info h5 {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.account-info ul {
+    list-style: disc; /* Vuelve a usar viñetas para las listas */
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+.account-info ul li {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.hidden-content {
+    display: none; /* Por defecto oculto, JS lo mostrará */
+}
+
+.mi-cuenta .btn-primary {
+    display: block; /* Ocupa todo el ancho */
+    margin: 30px auto 0 auto;
+    max-width: 300px;
+}
+
+
+/* Contacto Section */
+.contacto {
+    background-color: var(--medium-bg);
+}
+
+.contacto p.section-description {
+    font-size: 1.1rem; /* Más pequeño para la descripción */
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    color: #555;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: var(--card-bg);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 4px rgba(138, 43, 226, 0.2);
+    outline: none;
+}
+
+.contact-form .btn-primary {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.95rem;
+    box-shadow: inset 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.footer p {
+    margin: 8px 0;
+    color: rgba(255,255,255,0.9);
+}
+
+.footer-link {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.footer-link:hover {
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    .nav li {
+        margin: 5px 0;
+    }
+
+    .hero h2 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+
+    .section-description {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+
+    .package-grid, .itinerary-grid, .includes-grid {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+
+    .package-card {
+        padding: 30px;
+    }
+
+    .package-card h4 {
+        font-size: 1.8rem;
+    }
+
+    .package-price {
+        font-size: 2.2rem;
+    }
+
+    .itinerary-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .itinerary-day {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .itinerary-content {
+        text-align: center;
+    }
+
+    .itinerary-content i {
+        margin-right: 5px;
+    }
+
+    .account-info, .contact-form {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 2rem;
+    }
+
+    .nav a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        padding: 100px 15px;
+    }
+
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .package-card h4 {
+        font-size: 1.5rem;
+    }
+
+    .package-price {
+        font-size: 1.8rem;
+    }
+
+    .service-item i {
+        font-size: 3rem;
+    }
+
+    .service-item h4 {
+        font-size: 1.2rem;
+    }
+
+    .account-info, .contact-form {
+        padding: 20px;
+    }
+
+    .form-group label {
+        font-size: 0.95rem;
+    }
+
+    .form-group input, .form-group textarea {
+        padding: 10px;
+    }
+}
